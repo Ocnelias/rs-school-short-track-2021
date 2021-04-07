@@ -18,15 +18,17 @@ function getMatrixElementsSum(matrix) {
   const newArray = [];
   const sumArray = [];
 
-  for (let i = 0; i <= matrix.length; i++) {
-    for (let k = 0; i <= matrix[i].length; k++) {
-      newArray.push([]);
-      newArray[k].push(matrix[i][k]);
+  for (let i = 0; i < matrix[0].length; i++) {
+    newArray.push([]);
+  }
+  for (let i = 0; i < newArray.length; i++) {
+    for (let k = 0; k < matrix.length; k++) {
+      newArray[i].push(matrix[k][i]);
     }
   }
   let sum = 0;
-  for (let i = 0; i <= newArray.length; i++) {
-    for (let k = 0; i <= newArray[i].length; i++) {
+  for (let i = 0; i < newArray.length; i++) {
+    for (let k = 0; k < matrix.length; k++) {
       if (newArray[i][k] === 0) {
         break;
       }
