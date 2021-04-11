@@ -17,8 +17,17 @@
  * }
  */
 
-function removeKFromList(/* l, k */) {
-  throw new Error('Not implemented');
+function removeKFromList(l, k) {
+  const list = l;
+  if (!list.next) {
+    return list;
+  }
+  if (list.value === k) {
+    list.value = list.next.value;
+    list.next = list.next.next;
+  }
+  removeKFromList(list.next, k);
+  return list;
 }
 
 module.exports = removeKFromList;
